@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100px;
+        height: 100px;
+        background: rgb(7, 205, 7);
+        transition: background-color 1s ease-in-out;
+      }
+      button:hover {
+        background-color: darkgreen;
+        color: white;
+        cursor: copy;
+      }
+
+      .product {
+        display: inline-block;
+        transition: box-shadow 0.5s ease-in-out;
+      }
+      .product:hover {
+        box-shadow: 0px 0px 1px 1px rgb(138, 142, 138);
+      }
+      .menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 0px;
+        height: 0px;
+        border: 1px solid black;
+        transition: width 0.5s ease-in-out;
+        overflow: hidden;
+      }
+      .menu.open {
+        width: 200px;
+        height: 100px;
+      }
+
+      .poppetje {
+        width: 5px;
+        height: 5px;
+        background-color: red;
+        animation: poppetje 20s linear infinite;
+        position: absolute;
+      }
+
+      @keyframes poppetje {
+        0% {
+          left: 5px;
+        }
+        50% {
+          left: 100%;
+        }
+        100% {
+          left: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="poppetje"></div>
+    <button onclick="toonMenu()">oke</button>
+
+    <div class="product">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO764DLz0SjBb0UthZC7I54i2H6YyXS0q5hg&s"
+        alt=""
+      />
+    </div>
+    <ul class="menu">
+      <li>menu item 1</li>
+      <li>menu item 2</li>
+      <li>menu item 3</li>
+    </ul>
+
+    <script>
+      function toonMenu() {
+        document.querySelector(".menu").classList.toggle("open");
+      }
+    </script>
+  </body>
+</html>
